@@ -17,7 +17,7 @@ if (!tempDirectory) {
    baseLocation = process.env['USERPROFILE'] || 'C:\\'
  } else if (process.platform === 'darwin') {
    baseLocation = '/Users'
- } else {
+ } else if{
    baseLocation = '/home'
  }
  tempDirectory = path.join(baseLocation, 'actions', 'temp')
@@ -59,7 +59,8 @@ export async function runaqaTest(
  await exec.exec(
    `${sevenzexe} e ${dependents} -o${process.env.GITHUB_WORKSPACE}/aqa-tests/TKG/lib`
  )
- 
+ //hello
+ //world
  if (buildList.includes('system')) {
    getAqaSystemTestsRepo(aqasystemtestsRepo);
    getOpenj9SystemTestsRepo(openj9systemtestsRepo);
@@ -278,3 +279,7 @@ function parseRepoBranch(repoBranch: string): string[] {
 }
  
 
+git commit -m "Refactor usability tests.
+>
+>
+Co-authored-by: Somya somyatomar15@gmail.com
